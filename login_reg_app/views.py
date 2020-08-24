@@ -3,9 +3,17 @@ from django.contrib import messages
 from .models import User
 
 # Create your views here.
-def login_register(request):
+def index(request):
 
-    return render(request, 'login_register.html')
+    return render(request, 'index.html')
+
+def buyer_reg_login(request):
+
+    return render(request, 'buyer_reg_login.html')
+
+def seller_reg_login(request):
+
+    return render(request, 'seller_reg_login.html')
 
 def create_user(request):
     errors = User.objects.validate(request.POST)
