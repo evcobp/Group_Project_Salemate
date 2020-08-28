@@ -1,28 +1,34 @@
 from django.db import models
 
 # Create your models here.
-class BuyerTrait(models.Model):
-    Persistent = 'TRAIT_ONE',
-    Flexible = 'TRAIT_TWO',
-    Closer = 'TRAIT_THREE',
-    Detail_Oriented = 'TRAIT_FOUR',
-    Patient = 'TRAIT_FIVE',
-    Relatable = 'TRAIT_SIX',
-    Calculated = 'TRAIT_SEVEN',
-    Talker = 'TRAIT_EIGHT',
-    Consultative = 'TRAIT_NINE'
+
+class User(models.Model):
+    pass
+
+
+class TraitManager(models.Manager):
+    pass
         
-    BUYER_TRAIT_CHOICES = [
-        (Persistent, 'Persistent')
-        (Flexible, 'Flexible')
-        (Closer,'Closer')
-        (Detail_Oriented, 'Detail-Oriented')
-        (Patient, 'Patient')
-        (Relatable, 'Relatable')
-        (Calculated, 'Calculated')
-        (Talker, 'Talker')
-        (Consultative,'Consultative')
-    ]
-    profile_selection = models.CharField(
-        choices=BUYER_TRAIT_CHOICES
-    )
+class Trait(models.Model):
+    trait_one = models.BooleanField()
+    trait_two = models.BooleanField()
+    trait_three = models.BooleanField()
+    trait_four = models.BooleanField()
+    trait_five = models.BooleanField()
+    trait_six = models.BooleanField()
+    trait_seven = models.BooleanField()
+    trait_eight= models.BooleanField()
+    trait_nine = models.BooleanField()
+    user_traits = models.ForeignKey(User,related_name="traits", on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    
+class Question(models.Model):
+    question_one = models.BooleanField()
+    question_two = models.BooleanField()
+    question_three = models.BooleanField()
+    question_four = models.BooleanField()
+    question_five = models.BooleanField()
+    user_responses = models.ForeignKey(User, related_name="questions", on_delete = models.CASCADE)
+    

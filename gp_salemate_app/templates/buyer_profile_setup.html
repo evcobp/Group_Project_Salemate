@@ -10,8 +10,7 @@
     <section>
       <h3>Traitbuilder</h3>
       <p>Add Your Traits as Salesperson - Pick at least 5</p>
-      <form>
-      {% csrf_token %}
+      <form id="trait_form" name="trait_form">
         <table>
           <tr>
             <th>
@@ -19,19 +18,19 @@
             </th>
           </tr>
           <tr>
-            <td><input type="radio">Persistent</input></td>
-            <td><input type="radio">Flexible</input></td>
-            <td><input type="radio">Closer</input></td>
+            <td><input type="radio" id="trait_one" name="traits" value="Persistent"><label for="trait_one">Persistent</label></td>
+            <td><input type="radio" id="trait_two" name="traits" value="Flexible"><label for="trait_two">Flexible</label></td>
+            <td><input type="radio" id="trait_three" name="traits" value="Closer"><label for="trait_three">Closer</input></td>
           </tr>
           <tr>
-            <td><input type="radio">Consultative</input></td>
-            <td><input type="radio">Detail-oriented</input></td>
-            <td><input type="radio">Patient</input></td>
+            <td><input type="radio" id="trait_four" name="traits" value="Consultative"><label for="trait_four">Consultative</label></td>
+            <td><input type="radio" id="trait_five" name="traits" value="Detail-oriented"><label for ="trait_five">Detail-oriented</label></td>
+            <td><input type="radio" id="trait_six" name="traits" value="Patient"><label for ="trait_six">Patient</label></td>
           </tr>
           <tr>
-            <td><input type="radio">Relatable</input></td>
-            <td><input type="radio">Calculated</input></td>
-            <td><input type="radio">Talker</input></td>
+            <td><input type="radio" id="trait_seven" name="traits" value="Relatable"><label for = "trait_seven">Relatable</label></td>
+            <td><input type="radio" id="trait_eight" name="traits" value="Calculated"><label for = "trait_eight">Calculated</label></td>
+            <td><input type="radio" id="trait_nine" name="traits" value="Talker"><label for = "trait_nine">Talker</label></td>
           </tr>
         </table>
       </form>
