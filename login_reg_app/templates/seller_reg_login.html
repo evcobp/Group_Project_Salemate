@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dimension by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %} " />
+		<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<article id="buyer">
+								<section>
+									<h2>Register</h2>
+									{% if messages %}
+									<ul class="messages">    
+										{% for message in messages %}    
+											{% if 'register' in message.extra_tags %}
+											<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+											{% endif %}    
+										{% endfor %}
+									</ul>
+									{% endif %}
+									<form action="/create_user" method="POST">
+										{% csrf_token %}
+										<div class="form-group">
+											<label for="first_name">First Name</label>
+											<input type="text" name="first_name" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="last_name">Last Name</label>
+											<input type="text" name="last_name" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input type="email" name="email" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="password">Password</label>
+											<input type="password" name="password" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="conf_password">Confirm Password</label>
+											<input type="password" name="conf_password" class="form-control">
+										</div>
+										<br>
+										<button class="btn btn-primary">Submit</button>
+									</form>
+								</section>
+								<hr>
+								<section>
+									<h2>Login</h2>
+									{% if messages %}
+									<ul class="messages">    
+										{% for message in messages %}    
+											{% if 'login' in message.extra_tags %}
+											<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+											{% endif %}    
+										{% endfor %}
+									</ul>
+									{% endif %}
+									<form action="/login" method="POST">
+										{% csrf_token %}
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="password">Password</label>
+											<input type="password" name="password" id="password" class="form-control">
+										</div>
+										<br>
+										<button class="btn btn-primary">Submit</button>
+								</section>
+							</article>
+						</div>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Interview-Me. Design: Brett Gibson & Brandon Plavka.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src=" {% static 'assets/js/jquery.min.js' %} "></script>
+			<script src=" {% static 'assets/js/browser.min.js' %} "></script>
+			<script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
+			<script src=" {% static 'assets/js/util.js' %} "></script>
+			<script src=" {% static 'assets/js/main.js' %} "></script>
+
+	</body>
+</html>
