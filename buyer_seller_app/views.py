@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from login_reg_app.models import User
+from gp_salemate_app.models import Trait, Question
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -19,3 +21,19 @@ def dashboard(request):
         'scores': Score.objects.filter(user=user_that_logged_in),
     }
     return render(request, 'dashboard.html', context)
+
+
+def seller_profile_setup(request):
+    return render(request, 'seller_profile_setup.html')
+
+def seller_profile_page(request):
+    return render(request, 'seller_profile_page.html')
+
+def buyer_profile_setup(request):
+    return render(request, 'buyer_profile_setup.html')
+
+def buyer_profile_page(request):
+    return render(request, 'buyer_profile_page.html')
+
+def get_traits(request):
+    pass
