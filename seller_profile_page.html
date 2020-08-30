@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/css/seller_profile.css' %}">
+</head>
+<body>
+<div id="wrapper">
+    <section class="profile-pic">
+        <img src="static/css/profile_default.jpg">
+    </section>
+    <section class="buyer-match">
+        <table>
+            <tr>
+                <th>Matches</th>
+            </tr>
+            <tr>
+                <td><img src="static/css/profile_default.jpg" style="height:100px;width:100px;"><p>Name: Buyer Match A</p></td>
+            </tr>
+            <tr>
+        </table>
+    </section>
+    <section class="selected-trait">
+        <h3>Seller Traits</h3>
+        {% comment %} Display Seller selected traits during profile setup {% endcomment %}
+        {% comment %} {{ for trait = true }} {% endcomment %}
+        {% comment %} {{}} {% endcomment %}
+    </section>
+    <section class="question-summary">
+        <h3>Profile Summary</h3>
+        {% comment %} Display Seller questions as summary {% endcomment %}
+        {% comment %} {{ for trait = true }} {% endcomment %}
+        {% comment %} {{}} {% endcomment %}
+    </section>
+        
+
+</div>
+</body>
+</html>
+            
