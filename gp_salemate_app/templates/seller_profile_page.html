@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    <title>Seller Profile</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'static/css/seller_profile.css' %}">
 </head>
 <body>
 <div id="wrapper">
     <section class="profile-pic">
-        <img src="static/css/profile_default.jpg">
+        <img src="static\images\profile_default.jpg" style="height:100px;width:100px;">
     </section>
     <section class="buyer-match">
         <table>
@@ -18,13 +18,26 @@
                 <th>Matches</th>
             </tr>
             <tr>
-                <td><img src="static/css/profile_default.jpg" style="height:100px;width:100px;"><p>Name: Buyer Match A</p></td>
+                <td><img src="static\images\profile_default.jpg" style="height:100px;width:100px;"><p>Name: Buyer Match A</p></td>
             </tr>
             <tr>
         </table>
     </section>
     <section class="selected-trait">
-        <h3>Seller Traits</h3>
+         <table>
+            <tr>
+                <th>Seller Traits</th>
+            </tr>
+            <tr>
+                <td><p>{{trait.trait_one}} "Your trait goes here"</p></td>
+            </tr>
+            <tr>
+        </table>
+        <ul>
+        {% for trait in seller_traits.all %}
+            <li>{{trait}}
+        {% endfor %}
+        </ul>
         {% comment %} Display Seller selected traits during profile setup {% endcomment %}
         {% comment %} {{ for trait = true }} {% endcomment %}
         {% comment %} {{}} {% endcomment %}

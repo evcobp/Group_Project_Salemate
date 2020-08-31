@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    <title>Buyer Profile Setup</title>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
   </head>
     <body>
     <section>
       <h3>Traitbuilder</h3>
-      <p>Add Your Traits as Salesperson - Pick at least 5</p>
-      <form id="trait_form" name="trait_form">
+      <p>Add Your Traits as a Buyer - Pick at least 3</p>
+      <form id="buyer_trait_form" name="buyer_trait_form">
+      {% csrf_token %}
         <table>
           <tr>
             <th>
@@ -18,26 +19,26 @@
             </th>
           </tr>
           <tr>
-            <td><input type="radio" id="trait_one" name="traits" value="Persistent"><label for="trait_one">Persistent</label></td>
-            <td><input type="radio" id="trait_two" name="traits" value="Flexible"><label for="trait_two">Flexible</label></td>
-            <td><input type="radio" id="trait_three" name="traits" value="Closer"><label for="trait_three">Closer</input></td>
+            <td><input type="checkbox" id="trait_one" name="traits" value="Persistent"><label for="trait_one">Persistent</label></td>
+            <td><input type="checkbox" id="trait_two" name="traits" value="Flexible"><label for="trait_two">Flexible</label></td>
+            <td><input type="checkbox" id="trait_three" name="traits" value="Closer"><label for="trait_three">Closer</input></td>
           </tr>
           <tr>
-            <td><input type="radio" id="trait_four" name="traits" value="Consultative"><label for="trait_four">Consultative</label></td>
-            <td><input type="radio" id="trait_five" name="traits" value="Detail-oriented"><label for ="trait_five">Detail-oriented</label></td>
-            <td><input type="radio" id="trait_six" name="traits" value="Patient"><label for ="trait_six">Patient</label></td>
+            <td><input type="checkbox" id="trait_four" name="traits" value="Consultative"><label for="trait_four">Consultative</label></td>
+            <td><input type="checkbox" id="trait_five" name="traits" value="Detail-oriented"><label for ="trait_five">Detail-oriented</label></td>
+            <td><input type="checkbox" id="trait_six" name="traits" value="Patient"><label for ="trait_six">Patient</label></td>
           </tr>
           <tr>
-            <td><input type="radio" id="trait_seven" name="traits" value="Relatable"><label for = "trait_seven">Relatable</label></td>
-            <td><input type="radio" id="trait_eight" name="traits" value="Calculated"><label for = "trait_eight">Calculated</label></td>
-            <td><input type="radio" id="trait_nine" name="traits" value="Talker"><label for = "trait_nine">Talker</label></td>
+            <td><input type="checkbox" id="trait_seven" name="traits" value="Relatable"><label for = "trait_seven">Relatable</label></td>
+            <td><input type="checkbox" id="trait_eight" name="traits" value="Calculated"><label for = "trait_eight">Calculated</label></td>
+            <td><input type="checkbox" id="trait_nine" name="traits" value="Talker"><label for = "trait_nine">Talker</label></td>
           </tr>
         </table>
       </form>
     </section>
     <section>
       <h3>Questions</h3>
-      <form>
+      <form id="buyer_question_form" name="buyer_question_form">
         <div class="question" id="buyer-one">
           <label for="face-face">I prefer face to face meetings.</label>
           <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
