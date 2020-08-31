@@ -27,9 +27,9 @@ class UserManager(models.Manager):
         errors = {}
 
         if len(form_data['first_name']) < 2:
-            errors['first_name'] = '2 char min.'
+            errors['first_name'] = ' First name 2 char min.'
         if len(form_data['last_name']) < 2:
-            errors['last_name'] = '2 char min.'
+            errors['last_name'] = 'Last name 2 char min.'
         if len(form_data['email']) < 1:
             errors['email'] = 'Email field is required.'
         if not EMAIL_MATCH.match(form_data['email']):
@@ -48,9 +48,9 @@ class UserManager(models.Manager):
         errors = {}
 
         if len(form_data['first_name']) < 2:
-            errors['first_name'] = '2 char min.'
+            errors['first_name'] = 'First name 2 char min.'
         if len(form_data['last_name']) < 2:
-            errors['last_name'] = '2 char min.'
+            errors['last_name'] = 'Last name 2 char min.'
         if len(form_data['email']) < 1:
             errors['email'] = 'Email field is required.'
         if not EMAIL_MATCH.match(form_data['email']):

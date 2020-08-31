@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    <title>Buyer profile</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %} " />
+	<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
     <link rel="stylesheet" href="{% static 'static/css/buyer_profile.css' %}">
 </head>
 <body>
+    <nav class="nav_bar">
+        <h2>Welcome {{ user.first_name }} {{ user.last_name }}</h2>
+        <a href="/buyer_profile_setup/{{ user.id }}" role="button" class="btn btn-primary">Edit My Account</a>
+        <a href="/">Log off</a>
+    </nav>
 <div id="wrapper">
     <section class="profile-pic">
-        <img src="static/css/profile_default.jpg">
+        <!-- <img src="static/css/profile_default.jpg"> -->
+        <img  id="profile_img" src="static/images/user.png">
     </section>
     <section class="seller-match">
         <table>
@@ -18,7 +26,7 @@
                 <th>Matches</th>
             </tr>
             <tr>
-                <td><img src="static/css/profile_default.jpg" style="height:100px;width:100px;"><p>Name: Seller Match A</p></td>
+                <td><img src="static/images/user.png" style="width:75px;"><p>Name: Seller Match A</p></td>
             </tr>
             <tr>
         </table>
@@ -38,6 +46,11 @@
         
 
 </div>
+    <script src=" {% static 'assets/js/jquery.min.js' %} "></script>
+    <script src=" {% static 'assets/js/browser.min.js' %} "></script>
+    <script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
+    <script src=" {% static 'assets/js/util.js' %} "></script>
+    <script src=" {% static 'assets/js/main.js' %} "></script>
 </body>
 </html>
             

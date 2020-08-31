@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<title>Buyer login</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		{% load static %}
@@ -26,7 +26,7 @@
 						<div class="content">
 							<article id="buyer">
 								<section>
-									<h2>Register</h2>
+									<h2>Buyer Registration</h2>
 									{% if messages %}
 									<ul class="messages">    
 										{% for message in messages %}    
@@ -36,7 +36,7 @@
 										{% endfor %}
 									</ul>
 									{% endif %}
-									<form action="/create_user" method="POST">
+									<form action="/create_user_buyer" method="POST">
 										{% csrf_token %}
 										<div class="form-group">
 											<label for="first_name">First Name</label>
@@ -74,7 +74,7 @@
 										{% endfor %}
 									</ul>
 									{% endif %}
-									<form action="/login" method="POST">
+									<form action="/buyer_login" method="POST">
 										{% csrf_token %}
 										<div class="form-group">
 											<label for="email">Email</label>
