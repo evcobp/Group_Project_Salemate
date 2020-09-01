@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %} " />
+	<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
   <link rel="stylesheet" href="stylesheet.css" type="text/css">
   </head>
     <body>
@@ -18,7 +21,8 @@
             </th>
           </tr>
           <tr>
-            <td><input type="radio" id="trait_one" name="traits" value="Persistent"><label for="trait_one">Persistent</label></td>
+            <td><input type="radio" id="persistent" name="persistent" value="Persistent"><label for="persistent">Persistent</label></td> 
+            <!-- must be checkbox             name needs to me the DB id (trait_one) consider re-nameing to persistent -->
             <td><input type="radio" id="trait_two" name="traits" value="Flexible"><label for="trait_two">Flexible</label></td>
             <td><input type="radio" id="trait_three" name="traits" value="Closer"><label for="trait_three">Closer</input></td>
           </tr>
@@ -41,6 +45,7 @@
         <div class="question" id="buyer-one">
           <label for="face-face">I prefer face to face meetings.</label>
           <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
+          <!-- should be radio -->
         </div>
         <div class="question" id="buyer-two">
           <label for="face-face">I prefer to ask questions about what I want to know vs. listening to a pitch or presentation.</label>
@@ -63,5 +68,10 @@
 
   
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src=" {% static 'assets/js/jquery.min.js' %} "></script>
+    <script src=" {% static 'assets/js/browser.min.js' %} "></script>
+    <script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
+    <script src=" {% static 'assets/js/util.js' %} "></script>
+    <script src=" {% static 'assets/js/main.js' %} "></script>
     </body>
 </html>
