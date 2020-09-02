@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from login_reg_app.models import User
+from .models import Trait, Question
 # from gp_salemate_app.models import Trait, Question
 # from django.http import HttpResponseRedirect
 
@@ -18,13 +19,19 @@ def seller_profile(request):
     }
     return render(request, 'seller_profile_page.html', context)
 
-def buyer_profile_setup(request):
+def buyer_profile_setup(request, user_id):
     context = {
-        'user': User.objects.get(id=request.session['user_id']),
+        'user': User.objects.get(id=user_id),
     }
     return render(request, 'buyer_profile_setup.html', context)
 
 def buyer_profile(request):
+    user_that_logged_in = User.objects.get(id=request.session['user_id'])
+    
+    user_traists = Trait.objects.filter(user_traits=user_that_logged_in).count()
+
+    if user_traists == 0:
+        return render(request, 'buyer_profile_setup.html')
     context = {
         'user': User.objects.get(id=request.session['user_id']),
     }
