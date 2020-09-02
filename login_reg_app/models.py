@@ -58,7 +58,7 @@ class UserManager(models.Manager):
         users_with_email = self.filter(email=form_data['email'])
         if users_with_email: # if NON-EMPTY list
             errors['email'] = 'Email already in use.'
-        
+
         return errors
 
 # Create your models here.
@@ -70,6 +70,7 @@ class User(models.Model):
     password = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='profile_image', blank=True)
 
     objects = UserManager()
 
