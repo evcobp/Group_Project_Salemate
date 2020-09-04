@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import User
 
+
 # Create your views here.
 def index(request):
 
@@ -75,5 +76,5 @@ def seller_login(request):
     else:
         user = User.objects.get(email=request.POST['email'])
         request.session['user_id'] = user.id
-        return redirect('/seller')
+        return redirect('seller_profile_setup')
     return redirect('/seller_reg_login')

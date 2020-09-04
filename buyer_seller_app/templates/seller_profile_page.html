@@ -6,8 +6,7 @@
     <title>Seller profile</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %} " />
-	<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
-    <link rel="stylesheet" href="{% static 'static/css/seller_profile.css' %}">
+    <noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
 </head>
 <body>
     <nav class="nav_bar">
@@ -18,34 +17,52 @@
 <div id="wrapper">
     <section class="profile-pic">
         <!-- <img src="static/css/profile_default.jpg"> -->
-        <img  id="profile_img" src="static/images/user.png">
+        <img  id="profile_img" class="image" src="static/images/male_seller_user.jpg">
+        <p style="margin:auto 95px;text-align:center;">Me</p>
     </section>
-    <section class="buyer-match">
+    <section class="seller-match">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3 onclick="myFunction()" style="margin:auto 50px;">View My Matches</h3>
+        </form>
         <table>
             <tr>
-                <th>Matches</th>
+                <th style="padding-top:200px;"></th>
+            <tr>
+                <td>
+                    <div>
+                        <img id="image-match" src="static/images/female_buyer_match.jpg" style="height:125px;width:125px;">
+                        <p style="margin-top:25px;">Name: Laughing Linda</p>
+                        <p id="email">Email: laughinglinda@email.com</p>
+                        <button onclick="" id="meeting-button" value="meeting" href="mailto:">Schedule a Meeting</button>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td><img src="static/images/user.png" style="width:75px;"><p>Name: Buyer Match A</p></td>
+                 <td>
+                     <img src="static/images/male_buyer_match.jpg" id="image-match" style="height:125px;width:125px;">
+                    <p>Name: Hilarious Hank</p>
+                    <p id="email">Email: hilarioushank@email.com</p>
+                     <button type="click" id="meeting-button" value="meeting" href="mailto:">Schedule a Meeting</button>
+                </td>
+            </tr>
+                 <td>
+                     <img src="static/images/male_buyer_match_two.jpg" id="image-match" style="height:125px;width:125px;">
+                    <p>Name: Daring Dave</p>
+                    <p id="email">Email: daringdave@email.com</p>
+                     <button type="click" id="meeting-button" value="meeting" href="mailto:">Schedule a Meeting</button>
+                </td>
             </tr>
             <tr>
+                <td><img src="{{ user.user.image.url }}" alt=""></td>
+            </tr>
         </table>
     </section>
-    <section class="selected-trait">
-        <h3>Seller Traits</h3>
-        {% comment %} Display Seller selected traits during profile setup {% endcomment %}
-        {% comment %} {{ for trait = true }} {% endcomment %}
-        {% comment %} {{}} {% endcomment %}
-    </section>
-    <section class="question-summary">
-        <h3>Profile Summary</h3>
-        {% comment %} Display Seller questions as summary {% endcomment %}
-        {% comment %} {{ for trait = true }} {% endcomment %}
-        {% comment %} {{}} {% endcomment %}
-    </section>
-        
-
 </div>
+    <script>
+    function myFunction() {
+        document.getElementById("image-match").style.display = "inline";
+}   </script>
     <script src=" {% static 'assets/js/jquery.min.js' %} "></script>
     <script src=" {% static 'assets/js/browser.min.js' %} "></script>
     <script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
@@ -53,4 +70,3 @@
     <script src=" {% static 'assets/js/main.js' %} "></script>
 </body>
 </html>
-            

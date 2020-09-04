@@ -3,75 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    <title>Seller Profile Setup</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %} " />
-	<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
+
   </head>
     <body>
+    <div id="wrapper">
     <section>
       <h3>Traitbuilder</h3>
-      <p>Add Your Traits as Salesperson - Pick at least 5</p>
-      <form>
-        {% csrf_token 
-        %}
-        <table>
-          <tr>
-            <th>
-              <td>Traits</td>
-            </th>
-          </tr>
-          <tr>
-            <td><input type="radio">Persistent</input></td>
-            <td><input type="radio">Flexible</input></td>
-            <td><input type="radio">Closer</input></td>
-          </tr>
-          <tr>
-            <td><input type="radio">Consultative</input></td>
-            <td><input type="radio">Detail-oriented</input></td>
-            <td><input type="radio">Patient</input></td>
-          </tr>
-          <tr>
-            <td><input type="radio">Relatable</input></td>
-            <td><input type="radio">Calculated</input></td>
-            <td><input type="radio">Talker</input></td>
-          </tr>
-        </table>
+      <p>Add Your Traits as Salesperson - Pick at least 3</p>
+    
+      <form action='seller_profile_page' method='POST'>
+      {% csrf_token %}
+          <p><label for="seller_persistent">Persistent</label><input type="checkbox" id="seller_id_persistent" name="seller_persistent" maxlength="100"></p>
+        <p><label for="seller_flexible">Flexible</label><input type="checkbox" id="seller_flexible" name="seller_flexible"></p>
+        <p><label for="seller_closer">Closer</label><input type="checkbox" id="seller_closer" name="seller_closer"></p>
+        <p><label for="seller_consultative">Consultative</label><input type="checkbox" id="seller_consultative" name="seller_consultative"></p>
+        <p><label for="seller_detail_oriented">Detail-oriented</label><input type="checkbox" id="seller_detail_oriented" name="seller_detail_oriented"></p>
+        <p><label for="seller_patient">Patient</label><input type="checkbox" id="seller_patient" name="seller_patient"></p>
+        <p><label for="seller_charismatic">Charismatic</label><input type="checkbox" id="seller_charismatic" name="seller_charismatic"></p>
+        <p><label for="seller_calculated">Calculated</label><input type="checkbox" id="seller_calculated" name="seller_calculated"></p>
+         <p><label for="seller_talker">Talker</label><input type="checkbox" id="seller_talker" name="seller_talker"></p>
+          <input class="button" type="submit" value="Submit">
       </form>
     </section>
-    <section>
-      <h3>Questions</h3>
-      <form>
-        <div class="question" id="seller-one">
-          <label for="face-face">I prefer face to face meetings.</label>
-          <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
-        </div>
-        <div class="question" id="seller-two">
-          <label for="face-face">I ask questions more than I talk about product or service.</label>
-          <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
-        </div>
-        <div class="question" id="seller-three">
-          <label for="face-face">I don't mind following up until the decision-maker tells me no</label>
-          <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
-        </div>
-        <div class="question" id="seller-four">
-          <label for="face-face">I genuinely enjoy building rapport. (You do it because you like to, not because you have to)</label>
-          <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
-        </div>
-        <div class="question" id="seller-five">
-          <label for="face-face">I am uneasy when I can't read the prospect's buying signals.</label>
-          <input type="checkbox">Agree</input><input type="checkbox">Disagree</input>
-        </div>
-      </form>
-    </section>
-
-  
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-    <script src=" {% static 'assets/js/jquery.min.js' %} "></script>
-    <script src=" {% static 'assets/js/browser.min.js' %} "></script>
-    <script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
-    <script src=" {% static 'assets/js/util.js' %} "></script>
-    <script src=" {% static 'assets/js/main.js' %} "></script>
+    </div>
     </body>
 </html>
